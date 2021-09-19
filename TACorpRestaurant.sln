@@ -29,7 +29,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentProcessor", "Payment
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tasevski.Services.PaymentAPI", "Tasevski.Services.PaymentAPI\Tasevski.Services.PaymentAPI.csproj", "{4B48A86E-ED05-41B6-BFBB-A85A1435E9D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasevski.Services.Email", "Tasevski.Services.Email\Tasevski.Services.Email.csproj", "{7D901390-4139-4B01-934D-795CCE5C1982}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tasevski.Services.Email", "Tasevski.Services.Email\Tasevski.Services.Email.csproj", "{7D901390-4139-4B01-934D-795CCE5C1982}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway", "Gateway", "{77F4C629-F26B-4553-B379-155A281DFE86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasevski.GatewaySol", "Tasevski.GatewaySol\Tasevski.GatewaySol.csproj", "{9AA5DF20-965E-4E5A-954C-95B9F56E07F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,6 +81,10 @@ Global
 		{7D901390-4139-4B01-934D-795CCE5C1982}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D901390-4139-4B01-934D-795CCE5C1982}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D901390-4139-4B01-934D-795CCE5C1982}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AA5DF20-965E-4E5A-954C-95B9F56E07F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AA5DF20-965E-4E5A-954C-95B9F56E07F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AA5DF20-965E-4E5A-954C-95B9F56E07F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AA5DF20-965E-4E5A-954C-95B9F56E07F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -92,6 +100,7 @@ Global
 		{0A46A1D3-F6B7-4147-AA25-462E29A092B8} = {30DF19D3-552E-46B7-91C3-40479878CE80}
 		{4B48A86E-ED05-41B6-BFBB-A85A1435E9D8} = {95C7B63E-50B2-44D9-AB06-E024BB6B0900}
 		{7D901390-4139-4B01-934D-795CCE5C1982} = {95C7B63E-50B2-44D9-AB06-E024BB6B0900}
+		{9AA5DF20-965E-4E5A-954C-95B9F56E07F6} = {77F4C629-F26B-4553-B379-155A281DFE86}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {91556C12-3442-4F30-AC61-4D3049DD71B5}
