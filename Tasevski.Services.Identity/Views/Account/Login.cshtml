@@ -1,0 +1,91 @@
+﻿@model LoginViewModel
+
+<div class="login-page">
+    <div class="lead">
+        <h1>Најава</h1>
+        <p>Изберете како да се најавите</p>
+    </div>
+
+    <partial name="_ValidationSummary" />
+
+    <div class="row">
+
+        @if (Model.EnableLocalLogin)
+        {
+            <div class="col-md-6 col-sm-12 offset-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Локална сметка</h2>
+                    </div>
+
+                    <div class="card-body">
+                        <form asp-route="Login">
+                            <input type="hidden" asp-for="ReturnUrl" />
+
+                            <div class="form-group">
+                                <label asp-for="Username">Корисничко име</label>
+                                <input class="form-control" placeholder="Корисничко име" asp-for="Username" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Password">Лозинка</label>
+                                <input type="password" class="form-control" placeholder="Лозинка" asp-for="Password" autocomplete="off">
+                            </div>
+                            @if (Model.AllowRememberLogin)
+                            {
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input class="form-check-input" asp-for="RememberLogin">
+                                        <label class="form-check-label" asp-for="RememberLogin">
+                                            Запамти ме
+                                        </label>
+                                    </div>
+                                </div>
+                            }
+                            <button class="btn btn-primary" name="button" value="login">Најава</button>
+                            <button class="btn btn-secondary" name="button" value="cancel">Откажи</button>
+                        </form>
+                    </div>
+
+                    <div class="card-footer">
+                        <a href="@Url.Action("Register", new { Model.ReturnUrl})">Нов корисник? Регистрирај се!</a>
+                    </div>
+                </div>
+            </div>
+        }
+
+        @if (Model.VisibleExternalProviders.Any())
+        {
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>External Account</h2>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-inline">
+                            @foreach (var provider in Model.VisibleExternalProviders)
+                            {
+                                <li class="list-inline-item">
+                                    <a class="btn btn-secondary"
+                               asp-controller="External"
+                               asp-action="Challenge"
+                               asp-route-scheme="@provider.AuthenticationScheme"
+                               asp-route-returnUrl="@Model.ReturnUrl">
+                                        @provider.DisplayName
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        }
+
+        @if (!Model.EnableLocalLogin && !Model.VisibleExternalProviders.Any())
+        {
+            <div class="alert alert-warning">
+                <strong>Invalid login request</strong>
+                There are no login schemes configured for this request.
+            </div>
+        }
+    </div>
+</div>

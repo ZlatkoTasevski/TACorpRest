@@ -1,0 +1,17 @@
+﻿<ul class="navbar-nav ms-auto flex-nowrap">
+    @if (User.Identity.IsAuthenticated)
+    {
+        <li class="nav-item pt-lg-1">
+            <a class="nav-link" href="#">ЗДРАВО @User.Identity.Name</a>
+        </li>
+        <li class="nav-item pt-lg-1">
+            <a class="nav-link" asp-action="Logout" asp-controller="Home">ОДЈАВА</a>
+        </li>
+    }
+    else
+    {
+        <li class="nav-item pt-lg-1">
+            <a class="nav-link text-warning" asp-action="Login" asp-controller="Home">НАЈАВИ СЕ</a>
+        </li>
+    }
+</ul>
