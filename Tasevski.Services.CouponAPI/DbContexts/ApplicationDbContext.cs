@@ -25,7 +25,7 @@ public class ApplicationDbContext : DbContext
         modelBuilder.Entity<Coupon>().HasData(new Coupon
         {
             CouponId = 2,
-            CouponCode = "Popust100",
+            CouponCode = "Popust200",
             DiscountAmount = 200
         });       
     }
