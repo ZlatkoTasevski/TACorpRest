@@ -23,37 +23,37 @@ namespace Tasevski.Services.ProductAPI.DbContexts
             modelBuilder.Entity<Product>().HasData(new Product
             {
                 ProductId = 1,
-                Name = "Samosa",
-                Price = 15,
-                Description = "Praesent scelerisque, mi sed ultrices condimentum, lacus ipsum viverra massa, in lobortis sapien eros in arcu. Quisque vel lacus ac magna vehicula sagittis ut non lacus.<br/>Sed volutpat tellus lorem, lacinia tincidunt tellus varius nec. Vestibulum arcu turpis, facilisis sed ligula ac, maximus malesuada neque. Phasellus commodo cursus pretium.",
-                ImageUrl = "https://dotnettasevski.blob.core.windows.net/tasevskirestaurant/11.jpg",
-                CategoryName = "Appetizer"
+                Name = "Tелешки шницли во сос",
+                Price = 450,
+                Description = "Вкусни телешки шницли кои ќе ги обожавате. Добар апетит!",
+                ImageUrl = "https://dotnettasevski.blob.core.windows.net/tasevskirestaurant/Sliki/meso-snicla.jpg",
+                CategoryName = "Готвени јадења"
             });
             modelBuilder.Entity<Product>().HasData(new Product
             {
                 ProductId = 2,
-                Name = "Paneer Tikka",
-                Price = 13.99,
-                Description = "Praesent scelerisque, mi sed ultrices condimentum, lacus ipsum viverra massa, in lobortis sapien eros in arcu. Quisque vel lacus ac magna vehicula sagittis ut non lacus.<br/>Sed volutpat tellus lorem, lacinia tincidunt tellus varius nec. Vestibulum arcu turpis, facilisis sed ligula ac, maximus malesuada neque. Phasellus commodo cursus pretium.",
-                ImageUrl = "https://dotnettasevski.blob.core.windows.net/tasevskirestaurant/12.jpg",
-                CategoryName = "Appetizer"
+                Name = "Вкусни ароматични компири",
+                Price = 250,
+                Description = "Ароматични компири со рузмарин. Добар апетит!",
+                ImageUrl = "https://dotnettasevski.blob.core.windows.net/tasevskirestaurant/Sliki/kompiri-tava.jpg",
+                CategoryName = "Готвени јадења"
             });
             modelBuilder.Entity<Product>().HasData(new Product
             {
                 ProductId = 3,
-                Name = "Sweet Pie",
-                Price = 10.99,
-                Description = "Praesent scelerisque, mi sed ultrices condimentum, lacus ipsum viverra massa, in lobortis sapien eros in arcu. Quisque vel lacus ac magna vehicula sagittis ut non lacus.<br/>Sed volutpat tellus lorem, lacinia tincidunt tellus varius nec. Vestibulum arcu turpis, facilisis sed ligula ac, maximus malesuada neque. Phasellus commodo cursus pretium.",
-                ImageUrl = "https://dotnettasevski.blob.core.windows.net/tasevskirestaurant/13.jpg",
-                CategoryName = "Dessert"
+                Name = "Здрав оброк од спанаќ и јајца",
+                Price = 180,
+                Description = "Навистина брз, вкусен и здрав оброк. Добар апетит!",
+                ImageUrl = "https://dotnettasevski.blob.core.windows.net/tasevskirestaurant/Sliki/spanak-jajca.jpg",
+                CategoryName = "Јадења по порачка"
             });
             modelBuilder.Entity<Product>().HasData(new Product
             {
                 ProductId = 4,
-                Name = "Pav Bhaji",
-                Price = 15,
-                Description = "Praesent scelerisque, mi sed ultrices condimentum, lacus ipsum viverra massa, in lobortis sapien eros in arcu. Quisque vel lacus ac magna vehicula sagittis ut non lacus.<br/>Sed volutpat tellus lorem, lacinia tincidunt tellus varius nec. Vestibulum arcu turpis, facilisis sed ligula ac, maximus malesuada neque. Phasellus commodo cursus pretium.",
-                ImageUrl = "https://dotnettasevski.blob.core.windows.net/tasevskirestaurant/14.jpg",
+                Name = "Мешано месо во вкусен сос",
+                Price = 350,
+                Description = "Вкусно и сочно мешано месо. Добар апетит!",
+                ImageUrl = "https://dotnettasevski.blob.core.windows.net/tasevskirestaurant/Sliki/pilesko.jpg",
                 CategoryName = "Entree"
             });
         }
