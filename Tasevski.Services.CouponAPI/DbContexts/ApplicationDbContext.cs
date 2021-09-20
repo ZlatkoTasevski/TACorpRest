@@ -19,14 +19,14 @@ public class ApplicationDbContext : DbContext
         modelBuilder.Entity<Coupon>().HasData(new Coupon
         {
             CouponId = 1,
-            CouponCode = "10OFF",
-            DiscountAmount = 10
+            CouponCode = "Popust100",
+            DiscountAmount = 100
         });
         modelBuilder.Entity<Coupon>().HasData(new Coupon
         {
             CouponId = 2,
-            CouponCode = "20OFF",
-            DiscountAmount = 20
+            CouponCode = "Popust100",
+            DiscountAmount = 200
         });       
     }
 }
