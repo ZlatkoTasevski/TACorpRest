@@ -1,29 +1,33 @@
 ﻿@model LoggedOutViewModel
 
-@{ // set this so the layout rendering sees an anonymous user
-                ViewData["signed-out"] = true; }
+@{
+    // set this so the layout rendering sees an anonymous user
+    ViewData["signed-out"] = true;
+}
 
-<div class="logged-out-page">
+<div class="logged-out-page text-white">
     <h1>
-        Одјава
         <small>Вие сте сега одјавени</small>
     </h1>
 
     @if (Model.PostLogoutRedirectUri != null)
     {
-<div>
-    Притиснете <a class="PostLogoutRedirectUri" href="@Model.PostLogoutRedirectUri">овде</a> за да се вратите на
-    <span>@Model.ClientName</span> апликацијата.
-</div>}
+        <div>
+            Притиснете <a class="PostLogoutRedirectUri" href="@Model.PostLogoutRedirectUri">овде</a> за да се вратите на
+            <span>@Model.ClientName</span> апликацијата.
+        </div>
+    }
 
     @if (Model.SignOutIframeUrl != null)
     {
-<iframe width="0" height="0" class="signout" src="@Model.SignOutIframeUrl"></iframe>}
+        <iframe width="0" height="0" class="signout" src="@Model.SignOutIframeUrl"></iframe>
+    }
 </div>
 
 @section scripts
 {
     @if (Model.AutomaticRedirectAfterSignOut)
     {
-<script src="~/js/signout-redirect.js"></script>}
+     <script src="~/js/signout-redirect.js"></script>
+    }
 }

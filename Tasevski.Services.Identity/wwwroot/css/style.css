@@ -1,0 +1,12 @@
+﻿body {
+    background-image: url("../images/pexels-mali-maeder-64208.jpg");
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+}
+
+.card {
+    margin-top:20%;
+    box-shadow: 20px 20px 20px 20px rgba(0, 0, 0, 0.45);
+    border-radius: 10px;
+}

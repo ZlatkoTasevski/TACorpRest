@@ -1,6 +1,6 @@
 ﻿@model Tasevski.Web.Models.CartDTO
 
-@if(TempData["Error"] != null)
+@if (TempData["Error"] != null)
 {
     <div class="alert alert-warning" role="alert">@TempData["Error"]</div>
 }
@@ -19,9 +19,9 @@
                 <span style="font-size:25px;" class="text-primary">Внесете ги деталите и продолжете со наплата:</span>
                 <br />
             </div>
-            <div class="border mt-2">
+            <div class="border mt-2 bg-light">
                 <div class="container row">
-                    <div class="col-7">
+                    <div class="col-6">
                         <div class="row">
                             <div class="col-12">
                                 <label class="col-form-label">Име :</label>
@@ -41,25 +41,28 @@
                             </div>
                             <div class="col-12">
                                 <label class="col-form-label">Време на подигање</label>
-                                <input asp-for=CartHeader.PickupDateTime class="form-control form_datetime" type="text">
+                                <input asp-for=CartHeader.PickupDateTime class="form-control form_datetime" />
                             </div>
                             <div class="col-12">
-                                <label class="col-form-label">Број на картичка :</label>
-                                <input asp-for=CartHeader.CardNumber class="form-control" />
+                                <img class="w-25 mt-2" src=~/images/major-credit-card-logos-png-5.png />
                             </div>
-
-                            <div class="col-12">
-                                <label class="col-form-label">ЦВВ код :</label>
-                                <input asp-for=CartHeader.CVV class="form-control" />
-                            </div>
-
-                            <div class="col-12 pb-4">
-                                <label class="col-form-label">Важност до :</label>
-                                <input asp-for=CartHeader.ExpiryMonthYear placeholder="MMYY" class="form-control" />
+                            <div class="col-12 row">
+                                <div class=col-6>
+                                    <label class="col-form-label">Број на картичка :</label>
+                                    <input asp-for=CartHeader.CardNumber class="form-control creditcard" type="text" />
+                                </div>
+                                <div class=col-3>
+                                    <label class="col-form-label">ЦВВ код :</label>
+                                    <input asp-for=CartHeader.CVV class="form-control cvv" type="text" />
+                                </div>
+                                <div class=col-3>
+                                    <label class="col-form-label">Важност:</label>
+                                    <input asp-for=CartHeader.ExpiryMonthYear class="form-control expdate" type="text" />
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-5">
+                    <div class="col-6">
                         <div class="card mt-4">
                             <div class="card-body">
                                 <div class=" d-none d-lg-block">
@@ -67,7 +70,6 @@
                                         <div class="col-6">
                                             Детали за производот
                                         </div>
-
                                         <div class="col-3">
                                             Цена
                                         </div>
@@ -88,7 +90,6 @@
 
                                         <div class="col-3" style="font-size:11px;">
                                             <span style="font-size:17px;">@string.Format("{0:c}", cartObj.Product.Price)</span>
-
                                         </div>
                                         <div class="col-3" style="font-size:11px;">
                                             <span style="font-size:17px;">@cartObj.Count</span>
@@ -132,6 +133,24 @@
     $(document).ready(function() {
         $(".form_datetime").datetimepicker({format: 'dd-mm-yyyy hh:ii'});
         $(".form_datetime").datetimepicker('setStartDate', new Date());
+
     });
+
+    $(".creditcard").inputmask({
+      mask: "9999 9999 9999 9999",
+      placeholder: ""
+    });
+
+    $(".cvv").inputmask({
+      mask: "999",
+      placeholder: ""
+    });
+
+    $(".expdate").inputmask({
+      mask: "99/99",
+      placeholder: "22/22"
+    });
+
+
 </script>
 }

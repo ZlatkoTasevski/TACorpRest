@@ -151,7 +151,7 @@ public class CartAPIController : Controller
             //logic za dodavanje poraka vo procesot na naracka
             //await _messageBus.PublishMessage(checkoutHeaderDTO, "checkoutmessagetopic");
             await _messageBus.PublishMessage(checkoutHeaderDTO, "checkoutqueue");
-            //otkoga kje se zavrsi processot so naplata ovdeka ja briseme kosnickata
+            //otkoga kje se zavrsi processot so naplata ovdeka ja briseme koshnickata
             await _cartRepository.ClearCart(checkoutHeaderDTO.UserId);
         }
         catch (Exception e)
