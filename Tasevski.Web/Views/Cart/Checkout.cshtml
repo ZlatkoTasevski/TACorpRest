@@ -13,67 +13,69 @@
         <input asp-for="CartHeader.CouponCode" hidden />
         <input asp-for="CartHeader.DiscountTotal" hidden />
         <input asp-for="CartHeader.OrderTotal" hidden />
-        <div class="col-8 offset-2">
+        <div class="col-md-6 offset-md-3">
             <div>
                 <br><br>
-                <span style="font-size:25px;" class="text-primary">Внесете ги деталите и продолжете со наплата:</span>
+                <span style="font-size:25px; font-weight:600;" class="text-info">Внесете ги деталите и продолжете со наплата:</span>
                 <br />
             </div>
-            <div class="border mt-2 bg-light">
+            <div class="mt-2 bg-dark text-white senka">
                 <div class="container row">
-                    <div class="col-6">
-                        <div class="row">
-                            <div class="col-12">
-                                <label class="col-form-label">Име :</label>
-                                <input asp-for=CartHeader.FirstName class="form-control" />
-                            </div>
-                            <div class="col-12">
-                                <label class="col-form-label">Презиме :</label>
-                                <input asp-for=CartHeader.LastName class="form-control" />
-                            </div>
-                            <div class="col-12">
-                                <label class="col-form-label">Маил :</label>
-                                <input asp-for=CartHeader.Email class="form-control" />
-                            </div>
-                            <div class="col-12">
-                                <label class="col-form-label">Телефон :</label>
-                                <input asp-for=CartHeader.PhoneNumber class="form-control" />
-                            </div>
-                            <div class="col-12">
-                                <label class="col-form-label">Време на подигање</label>
-                                <input asp-for=CartHeader.PickupDateTime class="form-control form_datetime" />
-                            </div>
-                            <div class="col-12">
-                                <img class="w-25 mt-2" src=~/images/major-credit-card-logos-png-5.png />
-                            </div>
-                            <div class="col-12 row">
-                                <div class=col-6>
-                                    <label class="col-form-label">Број на картичка :</label>
-                                    <input asp-for=CartHeader.CardNumber class="form-control creditcard" type="text" />
+                    <div class="col-6  mt-4 bg-dark border-dark">
+                        <div class="card-body" style="font-weight:600;">
+                            <div class="row">
+                                <div class="col-12">
+                                    <label class="col-form-label">Име :</label>
+                                    <input asp-for=CartHeader.FirstName class="form-control" />
                                 </div>
-                                <div class=col-3>
-                                    <label class="col-form-label">ЦВВ код :</label>
-                                    <input asp-for=CartHeader.CVV class="form-control cvv" type="text" />
+                                <div class="col-12">
+                                    <label class="col-form-label">Презиме :</label>
+                                    <input asp-for=CartHeader.LastName class="form-control" />
                                 </div>
-                                <div class=col-3>
-                                    <label class="col-form-label">Важност:</label>
-                                    <input asp-for=CartHeader.ExpiryMonthYear class="form-control expdate" type="text" />
+                                <div class="col-12">
+                                    <label class="col-form-label">Маил :</label>
+                                    <input asp-for=CartHeader.Email class="form-control" />
+                                </div>
+                                <div class="col-12">
+                                    <label class="col-form-label">Телефон :</label>
+                                    <input asp-for=CartHeader.PhoneNumber class="form-control" />
+                                </div>
+                                <div class="col-12">
+                                    <label class="col-form-label">Време на подигање</label>
+                                    <input asp-for=CartHeader.PickupDateTime class="form-control form_datetime" />
+                                </div>
+                                <div class="col-12">
+                                    <img class="w-25 mt-2" src=~/images/major-credit-card-logos-png-5.png />
+                                </div>
+                                <div class="col-12 row">
+                                    <div class=col-6>
+                                        <label class="col-form-label">Број на картичка :</label>
+                                        <input asp-for=CartHeader.CardNumber class="form-control creditcard" type="text" />
+                                    </div>
+                                    <div class=col-3>
+                                        <label class="col-form-label">ЦВВ код :</label>
+                                        <input asp-for=CartHeader.CVV class="form-control cvv" type="text" />
+                                    </div>
+                                    <div class=col-3>
+                                        <label class="col-form-label">Важност:</label>
+                                        <input asp-for=CartHeader.ExpiryMonthYear class="form-control expdate" type="text" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-6">
-                        <div class="card mt-4">
-                            <div class="card-body">
+                    <div class="col-6  mt-4 bg-dark border-dark">
+                        <div class="card mt-4 bg-dark border-dark">
+                            <div class="card-body" style="font-weight:600;">
                                 <div class=" d-none d-lg-block">
                                     <div class="row text-danger">
                                         <div class="col-6">
                                             Детали за производот
                                         </div>
-                                        <div class="col-3">
+                                        <div class="col-3 text-center">
                                             Цена
                                         </div>
-                                        <div class="col-3">
+                                        <div class="col-3 text-center">
                                             Количина
                                         </div>
                                     </div>
@@ -88,10 +90,10 @@
                                             <span style="font-size:20px">@cartObj.Product.Name</span>
                                         </div>
 
-                                        <div class="col-3" style="font-size:11px;">
+                                        <div class="col-3 text-center" style="font-size:11px;">
                                             <span style="font-size:17px;">@string.Format("{0:c}", cartObj.Product.Price)</span>
                                         </div>
-                                        <div class="col-3" style="font-size:11px;">
+                                        <div class="col-3 text-center" style="font-size:11px;">
                                             <span style="font-size:17px;">@cartObj.Count</span>
                                         </div>
                                     </div>
@@ -99,11 +101,11 @@
                                 }
 
                                 <div class="row">
-                                    <div class="col-12 text-right pr-4 text-danger">
+                                    <div class="col-12 text-right pr-4 text-success " style="font-size:20px;">
                                         Тотал за нарачка : @string.Format("{0:c}", Model.CartHeader.OrderTotal) <br />
                                         @if (Model.CartHeader.DiscountTotal > 0)
                                         {
-                                            <span class="text-success"> Попуст за нарачка: @string.Format("{0:c}", Model.CartHeader.DiscountTotal)</span>
+                                            <span class="text-warning" style="font-size:16px;"> Попуст за нарачка: @string.Format("{0:c}", Model.CartHeader.DiscountTotal)</span>
                                         }
                                     </div>
                                 </div>
@@ -112,8 +114,8 @@
                             <div class="card-footer">
                                 <div class="row">
 
-                                    <div class="col-12 ">
-                                        <button type="submit" class="btn btn-success form-control ">
+                                    <div class="col-12 d-grid gap-2">
+                                        <button type="submit" class="btn btn-success ">
                                             <span>Нарачајте</span>
                                         </button>
                                     </div>
@@ -122,6 +124,7 @@
                         </div>
                     </div>
                 </div>
+                <br>
             </div>
         </div>
     </form>
@@ -148,7 +151,7 @@
 
     $(".expdate").inputmask({
       mask: "99/99",
-      placeholder: "22/22"
+      placeholder: "12/22"
     });
 
 

@@ -57,11 +57,15 @@ namespace Tasevski.Services.Email.Messaging
             var message = args.Message;
             var body = Encoding.UTF8.GetString(message.Body);
 
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             UpdatePaymentResultMessage objMessage = JsonConvert.DeserializeObject<UpdatePaymentResultMessage>(body);
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
 
             try
             {
+#pragma warning disable CS8604 // Possible null reference argument.
                 await _emailRepository.SendAndLogEmail(objMessage);
+#pragma warning restore CS8604 // Possible null reference argument.
                 await args.CompleteMessageAsync(args.Message);
             }
             catch (Exception)

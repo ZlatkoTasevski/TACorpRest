@@ -43,7 +43,7 @@
                             <select asp-for="RoleName" class="form-control" asp-items="@(new SelectList(ViewBag.message))"></select>
                         </div>
                         <button class="btn btn-primary" name="button" value="Register">Регистрација</button>
-                        <button class="btn btn-secondary" name="button" value="cancel">Откажи</button>
+                        <a href="@Url.Action("Login",new {Model.ReturnUrl })" class="btn btn-secondary" name="button" value="cancel">Откажи</a>
                     </form>
                 </div>
                 <div class="card-footer">

@@ -59,7 +59,9 @@ namespace Tasevski.Services.PaymentAPI.Messaging
             var message = args.Message;
             var body = Encoding.UTF8.GetString(message.Body);
 
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             PaymentRequestMessage paymentRequestMessage = JsonConvert.DeserializeObject<PaymentRequestMessage>(body);
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
 
             var result = _processPayment.PaymentProcessor();
 

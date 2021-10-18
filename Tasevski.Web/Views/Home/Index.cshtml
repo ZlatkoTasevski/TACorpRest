@@ -1,101 +1,129 @@
 ﻿@model IEnumerable<ProductDTO>
 
-<form style="background-color:rgba(26, 23, 23,  0.90);">
-    <button id="modalStart" hidden type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<form>
+    @*<button id="modalStart" hidden type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
         Launch demo modal
-    </button>
+        </button>*@
 
-    <!-- Modal -->
-    <div class="modal fade  mt-5" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+    <div class="modal fade  mt-5" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content" style="background-color:rgba(26, 23, 23,  0.20);">    
+            <div class="modal-content" style="background-color:rgba(26, 23, 23,  0.20);">
                 <div class="modal-body">
-                     @*<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>*@
-                     @*<img src="~/images/promo.jpg" class="d-block w-100 pt-5" />*@
-                     <img src="https://media.giphy.com/media/3ohs7Wy76q9iHDu0N2/giphy.gif" class="d-block w-100" />
+                    @*<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>*@
+                    @*<img src="~/images/promo.jpg" class="d-block w-100 pt-5" />*@
+                    <img src="https://media.giphy.com/media/3ohs7Wy76q9iHDu0N2/giphy.gif" class="d-block w-100" />
                 </div>
             </div>
         </div>
     </div>
-
-
-    <div>
-        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="~/images/Slika1.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="~/images/Slika2.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>Some representative placeholder content for the second slide.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="~/images/Slika3.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+    <br /><br />
+    <div class="tm-row">
+        <div class="tm-col-left text-center">
+            <h1>
+                <a href="" style="font-family: Brush Script MT; text-decoration:none; font-size: 5.0rem;" class="typewrite text-warning" data-period="2000" data-type='[ "Dobredojdovte.", "Poglednete gi nasite specijaliteti.", "Naracajte.", "I uzivajte vo prekrasnite vkusovi." ]'>
+                    <span class="wrap"></span>
+                </a>
+            </h1>
+           @* <div class="typewriter2">
+                <h2>Уживајте во нашите прекрасни специјалитети.</h2>
+            </div>*@
         </div>
-    </div>
-
-    <div class="col-10 offset-1 row mt-2">
-        <div class=text-center>
-            <h1 class=text-white>НАРАЧАЈ - ПЛАТИ - ЈАДИ</h1>
-            <h3 class=text-white>МЕНИ ЗА ДОСТАВА (100 ДЕН ПОПУСТ)</h3>
-        </div>
-        @foreach (var product in Model)
-        {
-            <div class="col-3 ">
-                <div class="p-0 my-3 border">
-                    <div class="card">
-                        <img src="@product.ImageUrl" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title text-success">@product.Name</h5>
-                            <span class="badge badge-light mb-2 ">@product.CategoryName</span>
-                            <p style="font-size:14px;" class="card-text"> @Html.Raw(product.Description)</p>
+        <main class="tm-col-right">
+            <section>
+                <div class=text-center>
+                    <h2 class=text-warning>&nbsp; &nbsp; &nbsp; &nbsp; СУПЕР ПОНУДА НА ДЕНОТ</h2>
+                    @*<h5 class=text-white>МЕНИ ЗА ДОСТАВА (100 ДЕН ПОПУСТ)</h5>*@
+                </div>
+                <hr class="col-11 offset-1 pl-5 mb-4 bg-white">
+                <div class="row mt-5">
+                    @foreach (var product in Model)
+                    {
+                        <div class="col-5 offset-1 text-center text-info preklop p-3 mb-3">
+                            <div>
+                                <img src="@product.ImageUrl" alt="Image" class="tm-service-img w-50">
+                                <h2 class="mb-1 tm-content-title">@product.Name</h2>
+                                <span class="badge badge-light text-warning mb-2 ">@product.CategoryName</span>
+                                <p class=text-white>@Html.Raw(product.Description)</p>
+                            </div>
                             <div class="row">
-                                <div class="col pt-1">
-                                    <span style="font-size:18px;"><strong>@string.Format("{0:c}", product.Price)</strong></span>
+                                <div class="col text-center">
+                                    <span class="text-warning " style="font-size:22px;"><strong>@string.Format("{0:c}", product.Price)</strong></span>
                                 </div>
-                                <div class="col">
-                                    <a asp-action="Details" asp-route-productId="@product.ProductId" class="btn btn-success btn-sm form-control">Детали</a>
+                                <div class="col text-center">
+                                    <a asp-action="Details" asp-route-productId="@product.ProductId" class="btn btn-outline-success btn-sm form-control">Нарачај</a>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    }
                 </div>
-            </div>
-        }
-
+            </section>
+        </main>
     </div>
+       
 </form>
 
 @section Scripts {
-    <script type="text/javascript">
-$(document).ready(function(){
-    $("#modalStart").click(); 
-});
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#modalStart").click();
+    });
+</script>
+<script>
+    var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+    };
 </script>
 }

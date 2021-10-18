@@ -7,7 +7,7 @@
         <input asp-for="CartHeader.UserId" hidden>
         <input asp-for="CartHeader.CartHeaderId" hidden>
         <div class="">
-            <div class="card border mt-4 container">
+            <div class="card border mt-4 container senka bg-dark">
                 <div class="card-header bg-dark text-light ml-0 row ">
                     <div class="col-6">
                         <i class="fa fa-shopping-cart"></i> &nbsp;
@@ -17,19 +17,20 @@
                         <a asp-action="Index" asp-controller="Home" class="btn btn-outline-warning btn-sm">Продолжете со купување</a>
                     </div>
                 </div>
-                <div class="card-body">
+                <div class="card-body bg-dark">
                     <div class=" d-none d-lg-block">
-                        <div class="row text-info">
+                        <div class="row text-info ">
+                           
                             <div class="col-lg-2">
                             </div>
                             <div class="col-lg-5">
-                                Детали за производот
+                                <strong>Детали за производот</strong>
                             </div>
-                            <div class="col-lg-2">
-                                Цена
+                            <div class="col-lg-2 text-center">
+                                <strong>Цена</strong>
                             </div>
-                            <div class="col-lg-2">
-                                Количина
+                            <div class="col-lg-2 text-center">
+                                <strong>Количина</strong>
                             </div>
                             <div class="col-lg-1">
                             </div>
@@ -43,14 +44,14 @@
                             <div class="col-4 col-md-2 text-center py-2">
                                 <img src="@cartObj.Product.ImageUrl" class="rounded" width="100%" />
                             </div>
-                            <div class="col-8 col-md-5">
-                                <h5>@cartObj.Product.Name</h5>
-                                <div style="font-size:11px;">@Html.Raw(cartObj.Product.Description)</div>
+                            <div class="col-8 col-md-5 ">
+                                <h3 class="text-warning">@cartObj.Product.Name</h3>
+                                <div style="font-size:14px;">@Html.Raw(cartObj.Product.Description)</div>
                             </div>
-                            <div class="col-3 col-md-2 pt-md-4" style="font-size:11px;">
+                            <div class="col-3 col-md-2 pt-md-4 text-center" style="font-size:14px;">
                                 <span style="font-size:17px;">@string.Format("{0:c}", cartObj.Product.Price)</span>
                             </div>
-                            <div class="col-3 col-md-2 pt-md-4" style="font-size:11px;">
+                            <div class="col-3 col-md-2 pt-md-4 text-center" style="font-size:14px;">
                                 <span style="font-size:17px;"> @cartObj.Count</span>
                             </div>
                             <div class="col-2 col-lg-1 p-0 pt-lg-4 text-center">
@@ -79,7 +80,7 @@
                             }
                         </div>
                         <div class="col-6 text-end">
-                            <span class="text-danger" style="font-size:21px;">  Тотал за нарачка : @string.Format("{0:c}", Model.CartHeader.OrderTotal) <br /></span>
+                            <span class="text-danger" style="font-size:23px; font-weight:600;">  Тотал за нарачка : @string.Format("{0:c}", Model.CartHeader.OrderTotal) <br /></span>
                             @if (Model.CartHeader.DiscountTotal > 0)
                             {
                                 <span class="text-success"> Попуст за нарачка: @string.Format("{0:c}", Model.CartHeader.DiscountTotal)</span>
@@ -87,12 +88,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-footer row">
-                    <div class="col-6 col-md-3 offset-md-6">
+                <div class="card-footer ml-0 row">
+                    <div class="col-6">
                     </div>
-                    <div class="col-6 col-md-3">
-                        <a asp-action="Checkout" class="btn btn-success form-control ">
-                            <span>Одјава</span>
+                    <div class="col-6 text-end">
+                        <a asp-action="Checkout" class="btn btn-outline-success btn-sm ">
+                            Продолжете кон одјава
                         </a>
                     </div>
                 </div>

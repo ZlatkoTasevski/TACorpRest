@@ -9,8 +9,8 @@ namespace Tasevski.Services.ProductAPI
         {
             var mappingConfig = new MapperConfiguration(config =>
             {
-                config.CreateMap<ProductDTO, Product>();
-                config.CreateMap<Product, ProductDTO>();
+                config.CreateMap<ProductDTO, Product>().ReverseMap();
+                //config.CreateMap<Product, ProductDTO>();
             });
             return mappingConfig;
         }

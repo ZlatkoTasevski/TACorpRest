@@ -35,6 +35,7 @@ namespace Tasevski.Web.Controllers
         {
             return View();
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ProductCreate(ProductDTO model)
@@ -50,6 +51,7 @@ namespace Tasevski.Web.Controllers
             }
             return View(model);
         }
+
         [Authorize(Roles = SD.Admin)]
         public async Task<IActionResult> ProductEdit(int productId)
         {
@@ -60,8 +62,9 @@ namespace Tasevski.Web.Controllers
                 ProductDTO model = JsonConvert.DeserializeObject<ProductDTO>(Convert.ToString(response.Result));
                 return View(model);
             }
-            return NotFound();
+            return View("~/AccessDenied.cshtml");
         }
+
         [HttpPost]
         [Authorize(Roles = SD.Admin)]
         [ValidateAntiForgeryToken]
@@ -91,6 +94,7 @@ namespace Tasevski.Web.Controllers
             }
             return NotFound();
         }
+
         [HttpPost]
         [Authorize(Roles = SD.Admin)]
         [ValidateAntiForgeryToken]

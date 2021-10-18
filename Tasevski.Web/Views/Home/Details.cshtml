@@ -3,12 +3,12 @@
 <form method="post">
     <input asp-for="ProductId" hidden />
     <div class="mt-5">
-        <div class="card col-8 offset-2" >
-            <div class="card-header bg-danger text-light row">
-                <div class="col-12 col-md-6">
+        <div class="card col-md-6 offset-md-3 senka bg-dark" >
+            <div class="card-header text-light row" style="border-radius:5px;">
+                <div class="col-12 col-md-6 pt-2">
                     <h2 class="text-white">@Model.Name</h2>
                 </div>
-                <div class="col-12 col-md-6 text-end">
+                <div class="col-12 col-md-6 text-end pt-2">
                     <h1 class="text-warning">@string.Format("{0:c}", Model.Price)</h1>
                 </div>
             </div>
@@ -28,19 +28,19 @@
                                 </div>
                             </div>
                             <div class="row col-3 p-2">
-                                <input asp-for="Count" class="form-control" />
+                                <input asp-for="Count" class="bg-dark text-warning text-center" />
                                 <span asp-validation-for="Count" class="text-danger"></span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="card-footer row bg-dark">
-                <div class="col-12 col-md-6 pb-1 ">
-                    <a asp-action="Index" asp-controller="Home" class="btn btn-success btn-square form-control btn-lg" style="height:50px;">Врати се назад</a>
+            <div class="card-footer bg-transparent row">
+                <div class="col-12 col-md-6">
+                    <a asp-action="Index" asp-controller="Home" class="btn btn-success d-grid form-control" >Врати се назад</a>
                 </div>
                 <div class="col-12 col-md-6 ">
-                    <button type="submit" class="btn btn-primary form-control btn-lg" style="height:50px;">Додади во кошничка</button>
+                    <button type="submit" class="btn btn-primary d-grid form-control">Додади во кошничка</button>
                 </div>
             </div>
         </div>
