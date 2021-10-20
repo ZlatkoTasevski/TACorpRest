@@ -25,7 +25,7 @@ namespace Tasevski.Web.Controllers
             var accessToken = await HttpContext.GetTokenAsync("access_token");
             var response = await _productService.GetAllProductsAsync<ResponseDTO>(accessToken);
             if (response != null && response.IsSuccess)
-            {
+            {                
                 list = JsonConvert.DeserializeObject<List<ProductDTO>>(Convert.ToString(response.Result));
             }
             return View(list);

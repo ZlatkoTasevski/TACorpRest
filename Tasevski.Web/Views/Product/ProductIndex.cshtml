@@ -17,6 +17,7 @@
                 <th>Име</th>
                 <th>Категорија</th>
                 <th>Опис</th>
+                <th>На промоција</th>
                 <th>Цена</th>
                 <th class="text-center">Опции</th>
             </tr>
@@ -28,10 +29,18 @@
                     <td>@item.Name</td>
                     <td>@item.CategoryName</td>
                     <td>@item.Description</td>
+                    @if(item.Prikazi != false)
+                    {
+                        <td class="text-center"><input type="checkbox" class="form-check-input" checked disabled /></td>
+                    }
+                    else
+                    {
+                        <td class="text-center"><input type="checkbox" class="form-check-input" disabled /></td>
+                    }
                     <td>@((item.Price).ToString("c"))</td>
                     <td class="text-center">
-                        <a asp-action="ProductEdit" class="btn btn-success btn-sm" asp-route-productId="@item.ProductId"><i class="fas fa-edit"></i></a>
-                        <a asp-action="ProductDelete" class="btn btn-danger btn-sm" asp-route-productId="@item.ProductId"><i class="fas fa-trash"></i></a>
+                        <a asp-action="ProductEdit" class="btn btn-success btnNew" asp-route-productId="@item.ProductId"><i class="fas fa-edit"></i></a>
+                        <a asp-action="ProductDelete" class="btn btn-danger btnNew" asp-route-productId="@item.ProductId"><i class="fas fa-trash-alt"></i></a>
                     </td>
                 </tr>
             }

@@ -13,5 +13,6 @@ namespace Tasevski.Services.ProductAPI.Models
         public string Description { get; set; }
         public string CategoryName { get; set; }
         public string ImageUrl { get; set; }
+        public bool Prikazi { get; set; }
     }
 }
