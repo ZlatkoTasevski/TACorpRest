@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
@@ -8,7 +7,6 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Security.Claims;
 using System.Threading.Tasks;
 using Tasevski.Web.Models;
 using Tasevski.Web.Services.IServices;
@@ -33,28 +31,10 @@ namespace Tasevski.Web.Controllers
         public async Task<IActionResult> Index()
         {
             List<ProductDTO> list = new();
-
             var response = await _productService.GetAllProductsAsync<ResponseDTO>("");
-
             if (response != null && response.IsSuccess)
             {
                 list = JsonConvert.DeserializeObject<List<ProductDTO>>(Convert.ToString(response.Result));
-            }
-
-
-            CartDTO cartDTO = new();
-            var userId = User.Claims.Where(u => u.Type == "sub")?.FirstOrDefault()?.Value;
-            var accessToken = await HttpContext.GetTokenAsync("access_token");
-            var response2 = await _cartService.GetCartByUserIdAsync<ResponseDTO>(userId, accessToken);
-
-            if (response2 != null && response2.IsSuccess)
-            {
-                cartDTO = JsonConvert.DeserializeObject<CartDTO>(Convert.ToString(response2.Result));
-
-                int count = cartDTO.CartDetails.Count();
-                HttpContext.Session.SetInt32(SD.ShoppingCartAPIBase, count);
-
-
             }
             return View(list);
         }
@@ -110,11 +90,6 @@ namespace Tasevski.Web.Controllers
         }
 
         public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        public IActionResult About()
         {
             return View();
         }

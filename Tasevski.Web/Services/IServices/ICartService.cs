@@ -1,6 +1,5 @@
 ﻿
 using System.Threading.Tasks;
-using System.Collections.Generic;
 using Tasevski.Web.Models;
 
 namespace Tasevski.Web.Services.IServices;

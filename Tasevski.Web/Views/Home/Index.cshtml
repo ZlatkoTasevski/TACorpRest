@@ -36,15 +36,12 @@
                 </div>
                 <hr class="col-11 offset-1 pl-5 mb-4 bg-white">
                 <div class="row mt-5">
-                   
-                   
                     @foreach (var product in Model)
                     {
-                        @if(product.Prikazi != false){
-                            <div class="col-5 offset-1 text-center text-info preklop p-3 mb-3">
+                        <div class="col-5 offset-1 text-center text-info preklop p-3 mb-3">
                             <div>
                                 <img src="@product.ImageUrl" alt="Image" class="tm-service-img w-50">
-                                <h2 class="mb-1 tm-content-title text-info">@product.Name</h2>
+                                <h2 class="mb-1 tm-content-title">@product.Name</h2>
                                 <span class="badge badge-light text-warning mb-2 ">@product.CategoryName</span>
                                 <p class=text-white>@Html.Raw(product.Description)</p>
                             </div>
@@ -56,8 +53,7 @@
                                     <a asp-action="Details" asp-route-productId="@product.ProductId" class="btn btn-outline-success btn-sm form-control">Нарачај</a>
                                 </div>
                             </div>
-                        </div>  
-                           }                                        
+                        </div>
                     }
                 </div>
             </section>

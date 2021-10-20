@@ -1,5 +1,4 @@
 ﻿
-using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Tasevski.Web.Models;
@@ -91,5 +90,4 @@ public class CartService : BaseService, ICartService //BaseService sakame da pra
             AccessToken = token
         });
     }
-
 }

@@ -455,20 +455,6 @@ textarea {
     }
 }
 
-.btnNew {
-    width: 3px !important;
-    height: 33px !important;
-    border-radius: 3px;
-    font-size: 16px;
-    font-weight: 500;
-    text-align: inherit;
-    margin: 1px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
 /*.typewriter h1 {
     color: #fff;
     font-family: monospace;
@@ -522,11 +508,6 @@ textarea {
         border-color: blue
     }
 }*/
-
-.rotate_01 {
-    -webkit-transition: -webkit-transform 3s;   
-}
-
-.rotate_01:hover {
-    -webkit-transform: rotate(-360deg) translateZ(0);
+*{
+    text-decoration
 }

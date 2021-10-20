@@ -1,7 +1,4 @@
-﻿@using Microsoft.AspNetCore.Http
-@inject IHttpContextAccessor HttpContextAccessor
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -25,7 +22,7 @@
             <div class="tm-row">
                 <div class="tm-col-left">
                     <div class="tm-site-header media">
-                        <img src="~/images/InsLogo_samo_poligoni-e1542727423564.png" class="rotate_01 p-3" />
+                        <img src="~/images/InsLogo_samo_poligoni-e1542727423564.png" class=p-3 />                      
                     </div>
                 </div>
                 <div class="tm-col-right">
@@ -40,36 +37,20 @@
                                 <li class="nav-item active">
                                     <a class="nav-link tm-nav-link pt-lg-1" asp-area="" asp-controller="Home" asp-action="Index">ДОМА</a>
                                 </li>
-                                <li class="nav-item active">
-                                    <a class="nav-link tm-nav-link pt-lg-1" asp-area="" asp-controller="Home" asp-action="About">ЗА НАС</a>
-                                </li>
                                 @if (User.Identity.IsAuthenticated)
                                 {
                                     <li class="nav-item">
                                         <a class="nav-link tm-nav-link pt-lg-1" asp-area="" asp-controller="Product" asp-action="ProductIndex">ПРОИЗВОДИ</a>
+                                    </li>                                
+                                    <li class="nav-item">
+                                        <a class="nav-link tm-nav-link pt-lg-1" asp-controller="Cart" asp-action="CartIndex"><i class="fas fa-shopping-cart"></i></a>
                                     </li>
-                                    @if (HttpContextAccessor.HttpContext.Session.GetInt32(SD.ShoppingCartAPIBase) != null)
-                                    {
-                                        <li class="nav-item">
-                                            <a class="nav-link tm-nav-link pt-lg-1 text-warning" asp-controller="Cart" asp-action="CartIndex">
-                                                @{
-                                                    var count = HttpContextAccessor.HttpContext.Session.GetInt32(SD.ShoppingCartAPIBase);
-                                                }
-                                                <i class="fas fa-shopping-cart"></i> &nbsp; (@count)
-                                            </a>
-                                        </li>
-                                    }
-                                    else
-                                    {
-                                        <li class="nav-item">
-                                            <a class="nav-link tm-nav-link pt-lg-1 text-white">
-                                                <i class="fas fa-shopping-cart"></i> &nbsp; (0)
-                                            </a>
-                                        </li>
-                                    }
                                 }
+                                
                             </ul>
-                            <partial name="_LoginPartial" />
+                          
+                                    <partial name="_LoginPartial" />
+                                
                         </div>
                     </nav>
                 </div>
@@ -152,7 +133,7 @@
     <script src="~/js/fontawesome.js"></script>
     @*<script src="~/js/buttons.bootstrap.min.js"></script>*@
     <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
-
+    
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.2/js/dataTables.bootstrap5.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.0.0/js/dataTables.buttons.min.js"></script>

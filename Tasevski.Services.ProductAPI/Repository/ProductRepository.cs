@@ -61,7 +61,7 @@ namespace Tasevski.Services.ProductAPI.Repository
         }
 
         public async Task<IEnumerable<ProductDTO>> GetProducts()
-        {            
+        {
             IEnumerable<Product> productList = await _db.Products.ToListAsync();
             return _mapper.Map<IEnumerable<ProductDTO>>(productList);
         }

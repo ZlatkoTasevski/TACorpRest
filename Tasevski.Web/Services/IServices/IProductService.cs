@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Tasevski.Web.Models;
 
 namespace Tasevski.Web.Services.IServices

@@ -41,9 +41,6 @@ namespace Tasevski.Services.ProductAPI.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
-                    b.Property<bool>("Prikazi")
-                        .HasColumnType("bit");
-
                     b.HasKey("ProductId");
 
                     b.ToTable("Products");
@@ -56,8 +53,7 @@ namespace Tasevski.Services.ProductAPI.Migrations
                             Description = "Вкусни телешки шницли кои ќе ги обожавате. Добар апетит!",
                             ImageUrl = "https://dotnettasevski.blob.core.windows.net/tasevskirestaurant/Sliki/meso-snicla.jpg",
                             Name = "Tелешки шницли во сос",
-                            Price = 450.0,
-                            Prikazi = false
+                            Price = 450.0
                         },
                         new
                         {
@@ -66,8 +62,7 @@ namespace Tasevski.Services.ProductAPI.Migrations
                             Description = "Ароматични компири со рузмарин. Добар апетит!",
                             ImageUrl = "https://dotnettasevski.blob.core.windows.net/tasevskirestaurant/Sliki/kompiri-tava.jpg",
                             Name = "Вкусни ароматични компири",
-                            Price = 250.0,
-                            Prikazi = false
+                            Price = 250.0
                         },
                         new
                         {
@@ -76,8 +71,7 @@ namespace Tasevski.Services.ProductAPI.Migrations
                             Description = "Навистина брз, вкусен и здрав оброк. Добар апетит!",
                             ImageUrl = "https://dotnettasevski.blob.core.windows.net/tasevskirestaurant/Sliki/spanak-jajca.jpg",
                             Name = "Здрав оброк од спанаќ и јајца",
-                            Price = 180.0,
-                            Prikazi = false
+                            Price = 180.0
                         },
                         new
                         {
@@ -86,8 +80,7 @@ namespace Tasevski.Services.ProductAPI.Migrations
                             Description = "Вкусно и сочно мешано месо. Добар апетит!",
                             ImageUrl = "https://dotnettasevski.blob.core.windows.net/tasevskirestaurant/Sliki/pilesko.jpg",
                             Name = "Мешано месо во вкусен сос",
-                            Price = 350.0,
-                            Prikazi = false
+                            Price = 350.0
                         });
                 });
 #pragma warning restore 612, 618
