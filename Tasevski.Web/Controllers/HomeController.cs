@@ -53,8 +53,10 @@ namespace Tasevski.Web.Controllers
 
                 int count = cartDTO.CartDetails.Count();
                 HttpContext.Session.SetInt32(SD.ShoppingCartAPIBase, count);
-
-
+            }
+            else
+            {
+                HttpContext.Session.SetInt32(SD.ShoppingCartAPIBase, 0);
             }
             return View(list);
         }
