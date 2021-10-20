@@ -50,6 +50,9 @@
                                         <li class="nav-item">
                                             <a class="nav-link tm-nav-link pt-lg-1" asp-area="" asp-controller="Product" asp-action="ProductIndex">ПРОИЗВОДИ</a>
                                         </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link tm-nav-link pt-lg-1" asp-area="" asp-controller="User" asp-action="UserIndex">КОРИСНИЦИ</a>
+                                        </li>
                                     }
                                     @if (HttpContextAccessor.HttpContext.Session.GetInt32(SD.ShoppingCartAPIBase) != 0)
                                     {
