@@ -1,0 +1,27 @@
+﻿@model Tasevski.Web.Models.ApplicationUser
+
+@{
+    ViewData["Title"] = "LockUnlock";
+}
+
+
+<div class="row">
+
+    <div class="col-md-4">
+        <form asp-action="LockUnlock">
+            <input asp-for="Id" hidden />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+           
+            <div class="col-9 m-1 form-check form-switch">
+                <input asp-for="LockoutEnd" class="form-control"  />
+                <span asp-validation-for="LockoutEnd" class="text-danger"></span>
+            </div>
+                <input type="submit" value="Save" class="btn btn-primary" />
+            
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
