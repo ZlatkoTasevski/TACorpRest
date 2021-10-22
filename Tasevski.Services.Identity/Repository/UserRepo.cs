@@ -47,8 +47,8 @@ namespace Tasevski.Services.Identity.Repository
         public async Task<ApplicationUser> LockUnlock(ApplicationUser user)
         {
             var usersInDb = await _db.Users.FirstOrDefaultAsync(u => u.Id == user.Id);
-            if (usersInDb.LockoutEnd != null)
-            {
+            if (user.LockoutEnd != null && user.LockoutEnd <= DateTime.Now)
+             {
                 usersInDb.LockoutEnd = DateTime.Now;
             }
             else

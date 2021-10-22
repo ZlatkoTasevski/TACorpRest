@@ -1,27 +1,64 @@
 ﻿@model Tasevski.Web.Models.ApplicationUser
 
 @{
+    Layout = "_Layout";
     ViewData["Title"] = "LockUnlock";
 }
 
+<div class="col-md-6 offset-md-3 border p-4 bg-dark senka ">
+    <br /><br />
+    <div class="row">
+        
+        <div class="text-center">
+            <form asp-action="LockUnlock">
+                <input asp-for="Id" hidden />
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                @if (Model.LockoutEnd <= DateTime.Now)
+                {
+                    <div class="col-12 row">
+                        <div class=col-4>
+                            <label class="col-form-label">Заклучи до дата/време :</label>
+                        </div>
+                        <div class=col-4>
+                            <input asp-for="LockoutEnd" class="form-control form_datetime" />
+                        </div>
+                        <div class=col-4>
+                            <input type="submit" value="Заклучи" class="btn btn-danger" />
+                        </div>
+                    </div>
+                    <br />
 
-<div class="row">
+                }
+                else
+                {
+                    <div class="col-12 row">
+                        <div class=col-4>
+                            <label class="col-form-label">Отклучи на дата/време :</label>
+                        </div>
+                        <div class=col-4>
+                            <input asp-for="LockoutEnd" class="form-control form_datetime" />
+                        </div>
+                        <div class=col-4>
+                            <input type="submit" value="Отклучи" class="btn btn-success" />
+                        </div>
+                    </div>
+                    <br />
 
-    <div class="col-md-4">
-        <form asp-action="LockUnlock">
-            <input asp-for="Id" hidden />
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-           
-            <div class="col-9 m-1 form-check form-switch">
-                <input asp-for="LockoutEnd" class="form-control"  />
-                <span asp-validation-for="LockoutEnd" class="text-danger"></span>
-            </div>
-                <input type="submit" value="Save" class="btn btn-primary" />
-            
-        </form>
+                }
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a class=btn btn-primary asp-action="UserIndex">Врати се назад</a>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+@section Scripts{
+<script src="~/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".form_datetime").datetimepicker({format: 'dd-mm-yyyy hh:ii'});
+        $(".form_datetime").datetimepicker('setStartDate', new Date());
+    });
+</script>
+}
