@@ -9,8 +9,8 @@ using Tasevski.Services.ProductAPI.DbContexts;
 namespace Tasevski.Services.ProductAPI.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210920092826_addProductsToDb")]
-    partial class addProductsToDb
+    [Migration("20211104083858_AddProductsToDb")]
+    partial class AddProductsToDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -19,6 +19,25 @@ namespace Tasevski.Services.ProductAPI.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "6.0.0-preview.7.21378.4")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("Tasevski.Services.ProductAPI.Models.Category", b =>
+                {
+                    b.Property<int>("CategoryId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("CategoryId");
+
+                    b.ToTable("Categories");
+                });
 
             modelBuilder.Entity("Tasevski.Services.ProductAPI.Models.Product", b =>
                 {
@@ -43,6 +62,9 @@ namespace Tasevski.Services.ProductAPI.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
+                    b.Property<bool>("Prikazi")
+                        .HasColumnType("bit");
+
                     b.HasKey("ProductId");
 
                     b.ToTable("Products");
@@ -55,7 +77,8 @@ namespace Tasevski.Services.ProductAPI.Migrations
                             Description = "Вкусни телешки шницли кои ќе ги обожавате. Добар апетит!",
                             ImageUrl = "https://dotnettasevski.blob.core.windows.net/tasevskirestaurant/Sliki/meso-snicla.jpg",
                             Name = "Tелешки шницли во сос",
-                            Price = 450.0
+                            Price = 450.0,
+                            Prikazi = false
                         },
                         new
                         {
@@ -64,7 +87,8 @@ namespace Tasevski.Services.ProductAPI.Migrations
                             Description = "Ароматични компири со рузмарин. Добар апетит!",
                             ImageUrl = "https://dotnettasevski.blob.core.windows.net/tasevskirestaurant/Sliki/kompiri-tava.jpg",
                             Name = "Вкусни ароматични компири",
-                            Price = 250.0
+                            Price = 250.0,
+                            Prikazi = false
                         },
                         new
                         {
@@ -73,7 +97,8 @@ namespace Tasevski.Services.ProductAPI.Migrations
                             Description = "Навистина брз, вкусен и здрав оброк. Добар апетит!",
                             ImageUrl = "https://dotnettasevski.blob.core.windows.net/tasevskirestaurant/Sliki/spanak-jajca.jpg",
                             Name = "Здрав оброк од спанаќ и јајца",
-                            Price = 180.0
+                            Price = 180.0,
+                            Prikazi = false
                         },
                         new
                         {
@@ -82,7 +107,8 @@ namespace Tasevski.Services.ProductAPI.Migrations
                             Description = "Вкусно и сочно мешано месо. Добар апетит!",
                             ImageUrl = "https://dotnettasevski.blob.core.windows.net/tasevskirestaurant/Sliki/pilesko.jpg",
                             Name = "Мешано месо во вкусен сос",
-                            Price = 350.0
+                            Price = 350.0,
+                            Prikazi = false
                         });
                 });
 #pragma warning restore 612, 618

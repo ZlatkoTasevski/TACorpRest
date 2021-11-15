@@ -18,15 +18,15 @@
     </div>
     <br /><br />
     <div class="tm-row">
-        <div class="tm-col-left text-center">
+        <div class="tm-col-left text-center">           
             <h1>
                 <a href="" style="font-family: Brush Script MT; text-decoration:none; font-size: 5.0rem;" class="typewrite text-warning" data-period="2000" data-type='[ "Dobredojdovte.", "Poglednete gi nasite specijaliteti.", "Naracajte.", "I uzivajte vo prekrasnite vkusovi." ]'>
                     <span class="wrap"></span>
                 </a>
             </h1>
-           @* <div class="typewriter2">
+            @* <div class="typewriter2">
                 <h2>Уживајте во нашите прекрасни специјалитети.</h2>
-            </div>*@
+                </div>*@
         </div>
         <main class="tm-col-right">
             <section>
@@ -36,34 +36,35 @@
                 </div>
                 <hr class="col-11 offset-1 pl-5 mb-4 bg-white">
                 <div class="row mt-5">
-                   
-                   
+
+
                     @foreach (var product in Model)
                     {
-                        @if(product.Prikazi != false){
+                        @if (product.Prikazi != false)
+                        {
                             <div class="col-5 offset-1 text-center text-info preklop p-3 mb-3">
-                            <div>
-                                <img src="@product.ImageUrl" alt="Image" class="tm-service-img w-50">
-                                <h2 class="mb-1 tm-content-title text-info">@product.Name</h2>
-                                <span class="badge badge-light text-warning mb-2 ">@product.CategoryName</span>
-                                <p class=text-white>@Html.Raw(product.Description)</p>
-                            </div>
-                            <div class="row">
-                                <div class="col text-center">
-                                    <span class="text-warning " style="font-size:22px;"><strong>@string.Format("{0:c}", product.Price)</strong></span>
+                                <div>
+                                    <img src="@product.ImageUrl" alt="Image" class="tm-service-img w-50">
+                                    <h2 class="mb-1 tm-content-title text-info">@product.Name</h2>
+                                    <span class="badge badge-light text-warning mb-2 ">@product.CategoryName</span>
+                                    <p class=text-white>@Html.Raw(product.Description)</p>
                                 </div>
-                                <div class="col text-center">
-                                    <a asp-action="Details" asp-route-productId="@product.ProductId" class="btn btn-outline-success btn-sm form-control">Нарачај</a>
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <span class="text-warning " style="font-size:22px;"><strong>@string.Format("{0:c}", product.Price)</strong></span>
+                                    </div>
+                                    <div class="col text-center">
+                                        <a asp-action="Details" asp-route-productId="@product.ProductId" class="btn btn-outline-success btn-sm form-control">Нарачај</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>  
-                           }                                        
+                        }
                     }
                 </div>
             </section>
         </main>
     </div>
-       
+
 </form>
 
 @section Scripts {
