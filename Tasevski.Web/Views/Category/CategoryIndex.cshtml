@@ -1,24 +1,21 @@
-﻿@model IEnumerable<Tasevski.Web.Models.ProductDTO>
+﻿@model IEnumerable<Tasevski.Web.Models.CategoryDTO>
 
 <br />
 <br />
 <div class="container border p-4 bg-dark senka ">
     <div class="row pb-2">
         <div class="col">
-            <h1 class="text-primary">Листа на производи</h1>
+            <h1 class="text-primary">Листа на категории</h1>
         </div>
         <div class="col text-end pt-1">
-            <a asp-action="ProductCreate" class="btn btn-success btn-sm mt-2"> Креирај нов производ</a>
+            <a asp-action="CategoryCreate" class="btn btn-success btn-sm mt-2"> Креирај нова категорија</a>
         </div>
     </div>
     <table id="example" class="table table-striped tabela table-dark" style="width:100%">
         <thead>
             <tr>
                 <th>Име</th>
-                <th>Категорија</th>
                 <th>Опис</th>
-                <th>На промоција</th>
-                <th>Цена</th>
                 <th class="text-center">Опции</th>
             </tr>
         </thead>
@@ -27,20 +24,10 @@
             {
                 <tr>
                     <td>@item.Name</td>
-                    <td>@item.CategoryName</td>
                     <td>@item.Description</td>
-                    @if(item.Prikazi != false)
-                    {
-                        <td class="text-center"><input type="checkbox" class="form-check-input" checked disabled /></td>
-                    }
-                    else
-                    {
-                        <td class="text-center"><input type="checkbox" class="form-check-input" disabled /></td>
-                    }
-                    <td>@((item.Price).ToString("c"))</td>
                     <td class="text-center">
-                        <a asp-action="ProductEdit" class="btn btn-success btnNew" asp-route-productId="@item.ProductId"><i class="fas fa-edit"></i></a>
-                        <a asp-action="ProductDelete" class="btn btn-danger btnNew" asp-route-productId="@item.ProductId"><i class="fas fa-trash-alt"></i></a>
+                        <a asp-action="CategoryEdit" class="btn btn-success btnNew" asp-route-categoryId="@item.CategoryId"><i class="fas fa-edit"></i></a>
+                        <a asp-action="CategoryDelete" class="btn btn-danger btnNew" asp-route-categoryId="@item.CategoryId"><i class="fas fa-trash-alt"></i></a>
                     </td>
                 </tr>
             }

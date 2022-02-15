@@ -73,9 +73,7 @@ namespace Tasevski.Services.OrderAPI.Messaging
             var message = args.Message;
             var body = Encoding.UTF8.GetString(message.Body);
 
-#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             CheckoutHeaderDTO checkoutHeaderDTO = JsonConvert.DeserializeObject<CheckoutHeaderDTO>(body);
-#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
 
             OrderHeader orderHeader = new()
             {
@@ -136,9 +134,7 @@ namespace Tasevski.Services.OrderAPI.Messaging
             var message = args.Message;
             var body = Encoding.UTF8.GetString(message.Body);
 
-#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             UpdatePaymentResultMessage paymentResultMessage = JsonConvert.DeserializeObject<UpdatePaymentResultMessage>(body);
-#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
 
             await _orderRepository.UpdateOrderPaymentStatus(paymentResultMessage.OrderId, paymentResultMessage.Status);
             await args.CompleteMessageAsync(args.Message);

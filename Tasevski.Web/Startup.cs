@@ -27,13 +27,18 @@ namespace Tasevski.Web
             services.AddHttpClient<IProductService, ProductService>();
             services.AddHttpClient<ICartService, CartService>();
             services.AddHttpClient<ICouponService, CouponService>();
+            services.AddHttpClient<IUserService, UsersService>();
+
             SD.ProductAPIBase = Configuration["ServiceUrls:ProductAPI"];
             SD.ShoppingCartAPIBase = Configuration["ServiceUrls:ShoppingCartAPI"];
             SD.CouponAPIBase = Configuration["ServiceUrls:CouponAPI"];
+            SD.UserAPIBase = Configuration["ServiceUrls:IdentityAPI"];
 
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<ICartService, CartService>();
             services.AddScoped<ICouponService, CouponService>();
+            services.AddScoped<IUserService, UsersService>();
+
             services.AddControllersWithViews();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddAuthentication(options =>

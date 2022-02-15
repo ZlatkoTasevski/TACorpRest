@@ -6,9 +6,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Tasevski.MessageBus;
 using Tasevski.Services.Identity.DbContexts;
 using Tasevski.Services.Identity.Initializer;
 using Tasevski.Services.Identity.Models;
+using Tasevski.Services.Identity.Repository;
 using Tasevski.Services.Identity.Services;
 
 namespace Tasevski.Services.Identity
@@ -27,7 +29,8 @@ namespace Tasevski.Services.Identity
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
+            services.AddScoped<IUserRepo, UserRepo>();
+            services.AddSingleton<IMessageBus, AzureServiceBusMessageBus>();
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
                       

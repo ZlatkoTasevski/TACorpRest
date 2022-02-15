@@ -1,0 +1,43 @@
+﻿@model Tasevski.Web.Models.CategoryDTO
+
+<form asp-action="CategoryEdit">
+    <input asp-for="CategoryId" hidden />
+    <br />
+    <div class="container border p-3 bg-dark senka">
+        <h1 class="text-primary">Измени категорија</h1>
+
+        <hr />
+        <div class="row">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="col-2">
+                <label asp-for="Name" class="control-label pt-2" style="font-size:20px;">Име</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+           
+            <div class="col-2">
+                <label asp-for="Description" class="control-label pt-2" style="font-size:20px;">Опис</label>
+            </div>
+            <div class="col-10 pb-3">
+                <textarea asp-for="Description" class="form-control" rows="5"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>           
+            <div class="col-5 offset-2">
+
+                <a asp-action="CategoryIndex" class="btn-primary btn form-control ">Врати се на листа</a>
+            </div>
+            <div class="col-5">
+                <input type="submit" value="Измени" class="btn btn-success form-control" />
+            </div>
+        </div>
+
+        <div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
